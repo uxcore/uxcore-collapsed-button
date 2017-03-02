@@ -118,7 +118,12 @@ class CollapsedButton extends React.Component {
       <Menu>
         {actions.map((action, index) => (
           <Menu.Item key={index} disabled={!!action.props.disabled}>
-            <a className="menu-item" onClick={me.handleMenuItemClick.bind(me, action)}>{action.props.children}</a>
+            <a
+              className="menu-item"
+              onClick={me.handleMenuItemClick.bind(me, action)}
+            >
+              {action.props.children}
+            </a>
           </Menu.Item>
         ))}
       </Menu>
