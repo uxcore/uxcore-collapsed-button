@@ -17,10 +17,23 @@ class Demo extends React.Component {
     };
   }
 
+  handleClick() {
+  }
+
   render() {
     return (
-      <div>
-        <CollapsedButton />
+      <div style={{ marginTop: '100px', marginLeft: '100px' }}>
+        <CollapsedButton type="button">
+          <CollapsedButton.Item onClick={this.handleClick.bind(this)}>
+            按钮一
+          </CollapsedButton.Item>
+          <CollapsedButton.Item onClick={this.handleClick.bind(this)}>
+            按钮二
+          </CollapsedButton.Item>
+          <CollapsedButton.Item onClick={this.handleClick.bind(this)}>
+            按钮三
+          </CollapsedButton.Item>
+        </CollapsedButton>
       </div>
     );
   }

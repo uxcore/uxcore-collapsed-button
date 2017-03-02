@@ -72,4 +72,5 @@ Yes please! See the [CONTRIBUTING](https://github.com/uxcore/uxcore/blob/master/
 
 | Name | Type | Required | Default | Comments |
 |---|---|---|---|---|
-
+|type|string|-|'button'|trigger的样式|
+|onClick|function|-|-|CollapsedButton.Item的点击回调|
