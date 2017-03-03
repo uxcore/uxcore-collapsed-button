@@ -23,7 +23,7 @@ class Demo extends React.Component {
   render() {
     return (
       <div style={{ marginTop: '100px', marginLeft: '100px' }}>
-        <CollapsedButton type="button">
+        <CollapsedButton>
           <CollapsedButton.Item onClick={this.handleClick.bind(this)}>
             按钮一
           </CollapsedButton.Item>
