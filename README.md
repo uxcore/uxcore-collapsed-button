@@ -72,5 +72,32 @@ Yes please! See the [CONTRIBUTING](https://github.com/uxcore/uxcore/blob/master/
 
 | Name | Type | Required | Default | Comments |
 |---|---|---|---|---|
-|type|string|-|'button'|trigger的样式|
-|onClick|function|-|-|CollapsedButton.Item的点击回调|
+|type|string|-|''|触发下拉的元素的类型，默认是文字，‘button’是按钮|
+|onClick|function|-|-|CollapsedButton.Item 的点击回调|
+
+
+## 使用方法
+
+```
+
+import CollapsedButton from 'uxcore-collapsed-button';
+
+handleClick() {}
+
+render() {
+  return (
+    <CollapsedButton type="button">
+      <CollapsedButton.Item onClick={this.handleClick.bind(this)}>
+        按钮一
+      </CollapsedButton.Item>
+      <CollapsedButton.Item onClick={this.handleClick.bind(this)}>
+        按钮二
+      </CollapsedButton.Item>
+      <CollapsedButton.Item>
+        按钮三
+      </CollapsedButton.Item>
+    </CollapsedButton>
+  );
+}
+
+```

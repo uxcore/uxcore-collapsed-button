@@ -222,7 +222,7 @@ class CollapsedButton extends React.Component {
       </Menu>
     );
 
-    const offsetY = type === 'button' ? -31 : -44;
+    const offsetY = type === 'button' ? -31 : -29;
 
     const dropdownOptions = {
       key: 'icon',
@@ -290,7 +290,7 @@ CollapsedButton.propTypes = {
   type: React.PropTypes.string,
 };
 CollapsedButton.defaultProps = {
-  type: 'button',
+  type: '',
   prefixCls: 'uxcore',
   onClick: () => {},
 };
