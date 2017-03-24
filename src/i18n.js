@@ -1,10 +1,10 @@
 module.exports = {
   'en-us': {
     'templated-column': 'Templated Column',
-    more: 'more',
+    'more': 'more',
   },
   'zh-cn': {
     'templated-column': '自定义列',
-    more: '更多',
+    'more': '更多',
   },
 };

@@ -74,6 +74,7 @@ Yes please! See the [CONTRIBUTING](https://github.com/uxcore/uxcore/blob/master/
 |---|---|---|---|---|
 |type|string|-|''|触发下拉的元素的类型，默认是文字，‘button’是按钮|
 |onClick|function|-|-|CollapsedButton.Item 的点击回调|
+|maxLength|number|-|2|超过 maxLength 将会变成下拉形式，否则平铺|
 
 
 ## 使用方法

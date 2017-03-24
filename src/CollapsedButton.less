@@ -9,11 +9,20 @@
 
 @__collapsedButtonPrefixCls: kuma-collapsed-button;
 
-.kuma-dropdown-menu > .kuma-dropdown-menu-item {
-  .menu-item {
-    width: 100%;
-    height: 100%;
-    display: inline-block;
-    cursor: pointer;
+.@{__collapsedButtonPrefixCls}-wrapper {
+  .kuma-dropdown-menu > .kuma-dropdown-menu-item {
+    .menu-item {
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      cursor: pointer;
+    }
+  }
+  a.action {
+    margin-right: 10px;
+  }
+  .kuma-button {
+    margin-right: 10px;
   }
 }
+
