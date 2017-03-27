@@ -296,7 +296,7 @@ CollapsedButton.propTypes = {
 CollapsedButton.defaultProps = {
   type: '',
   locale: 'zh-cn',
-  maxLength: 1,
+  maxLength: 3,
   prefixCls: 'kuma-collapsed-button',
   onClick: () => {},
 };
