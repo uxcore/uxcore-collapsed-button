@@ -27,7 +27,7 @@ class Demo extends React.Component {
     return (
       <div style={{ marginTop: '100px', marginLeft: '100px' }}>
         <h2>链接形态</h2>
-        <CollapsedButton maxLength={2}>
+        <CollapsedButton maxLength={1}>
           <Item onClick={() => { handleClick(1); }}>
             按钮一
           </Item>
@@ -39,7 +39,7 @@ class Demo extends React.Component {
           </Item>
         </CollapsedButton>
         <h2>按钮形态</h2>
-        <CollapsedButton type="button">
+        <CollapsedButton type="button" maxLength={1}>
           <Item onClick={() => { handleClick(1); }}>
             按钮一
           </Item>
