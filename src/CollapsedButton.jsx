@@ -110,6 +110,7 @@ class CollapsedButton extends React.Component {
   }
 
   renderMore(actions) {
+
     if (actions.length === 0) {
       return null;
     }
@@ -141,9 +142,10 @@ class CollapsedButton extends React.Component {
       overlayClassName: `${me.props.prefixCls}-more-dropdown`,
       onVisibleChange: me.handleDropdownVisibleChange,
     };
+
     const content = (
       <span>
-        {i18n[me.props.locale].more}
+        {i18n[me.props.locale]['more']}
         <i
           className={classnames({
             'kuma-icon': true,
@@ -222,7 +224,7 @@ class CollapsedButton extends React.Component {
       </Menu>
     );
 
-    const offsetY = type === 'button' ? -31 : -29;
+    const offsetY = type === 'button' ? -33 : -29;
 
     const dropdownOptions = {
       key: 'icon',
@@ -247,21 +249,22 @@ class CollapsedButton extends React.Component {
 
   render() {
     const me = this;
-    const { children } = me.props;
+    const { children, maxLength, prefixCls } = me.props;
     const buttons = [];
     const options = [];
-    if (React.Children.count(children) > 1) {
+
+    if (parseInt(maxLength, 10) === 1 && React.Children.count(children) > 1) {
       return (
-        <div>{me.renderHoverMenu()}</div>
+        <div className={`${prefixCls}-wrapper`}>{me.renderHoverMenu()}</div>
       );
     }
-    if (React.Children.count(children) <= 1) {
+    if (React.Children.count(children) <= parseInt(maxLength, 10)) {
       React.Children.forEach(children, (item, index) => {
         buttons.push(me.renderItem(item, index));
       });
     } else {
       React.Children.forEach(children, (item, index) => {
-        if (index < children.length - 1) {
+        if (index < parseInt(maxLength, 10) - 1) {
           buttons.push(me.renderItem(item, index));
         } else {
           options.push(item);
@@ -270,7 +273,7 @@ class CollapsedButton extends React.Component {
     }
 
     return (
-      <div>
+      <div className={`${prefixCls}-wrapper`}>
         {buttons}
         {me.renderMore(options)}
       </div>
@@ -288,9 +291,12 @@ CollapsedButton.propTypes = {
   locale: React.PropTypes.string,
   onClick: React.PropTypes.func,
   type: React.PropTypes.string,
+  maxLength: React.PropTypes.number,
 };
 CollapsedButton.defaultProps = {
   type: '',
+  locale: 'zh-cn',
+  maxLength: 3,
   prefixCls: 'kuma-collapsed-button',
   onClick: () => {},
 };
